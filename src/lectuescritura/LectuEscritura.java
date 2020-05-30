@@ -38,7 +38,7 @@ public class LectuEscritura {
     private void leerArchivo() {
         String cadena;
         String ordenado = "";
-        String ubicacion = this.buscarArchivo();
+        String ubicacion = buscarArchivo();
 
         //valido que selecciono archivo
         if (ubicacion != "") {
@@ -65,12 +65,19 @@ public class LectuEscritura {
     *metodo para escribir archivo texto.
     **/
     private void escribirArchivo() {
+        String ubicacion = "";
         String[] formato = {"Cedula: ", "Nombre: ", "Apellido: ", "Saldo: ", "Fecha: ", "Perfil: "};
         BufferedWriter escritor = null;
         FileWriter archivo_escribir = null;
-        int respuesta = Utilitarios.menuMostrar("Desea editar archivo");
-        String ubicacion = this.buscarArchivo();
-        if (respuesta == 0 && ubicacion != "") {
+        int respuesta = Utilitarios.leerEntero("Presiona 1 para crear archivo, 2 para editar archivo existente");
+
+        if (respuesta == 1) {
+            ubicacion = System.getProperty("user.home") + "/documento.txt";
+        } else {
+            ubicacion = buscarArchivo();
+        }
+
+        if (ubicacion != "") {
             try {
                 File file = new File(ubicacion);
                 String[] usuario = Utilitarios.formularioUsuario();
@@ -92,7 +99,7 @@ public class LectuEscritura {
 
     /*
     *
-    *metodo para buscar archivo que se usara
+    *metodo para buscar archivo que se usara retorna ubicacion de archivo
      */
     private String buscarArchivo() {
         String respuesta = "";

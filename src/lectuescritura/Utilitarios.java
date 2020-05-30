@@ -41,12 +41,12 @@ public class Utilitarios {
 
     // metodo para leer un dato de tipo string y convertirlo a entero
     public static int leerEntero(String mensaje) {
-        String N = JOptionPane.showInputDialog(null, mensaje, "Banco Progreso", 1);
+        String N = JOptionPane.showInputDialog(null, mensaje, "Archivo planos", 1);
         int n = Integer.parseInt(N);
         return n;
     }
-    
-     /*
+
+    /*
      *
      *
      * metodo pedira la informacion relacionado 
@@ -79,8 +79,8 @@ public class Utilitarios {
 
         JOptionPane.showConfirmDialog(null, Formulario, "Ingrese informacion cliente", JOptionPane.DEFAULT_OPTION);
 
-        String[] usuario = { nombre.getText(), apellido.getText(), identificacion.getText(), saldo.getText(),
-                fecha.getText(), nivel.getText() };
+        String[] usuario = {nombre.getText(), apellido.getText(), identificacion.getText(), saldo.getText(),
+            fecha.getText(), nivel.getText()};
         return usuario;
     }
 }
