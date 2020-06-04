@@ -50,6 +50,7 @@ public class Utilitarios {
      *
      *
      * metodo pedira la informacion relacionado 
+     *-@return usuario String[] informacion que digito el usuario
      */
     public static String[] formularioUsuario() {
 
@@ -59,10 +60,10 @@ public class Utilitarios {
         JTextField saldo = new JTextField(15);
         JTextField fecha = new JTextField(15);
         JTextField nivel = new JTextField(15);
-
+        
         JPanel Formulario = new JPanel();
-
-        Formulario.setLayout(new BoxLayout(Formulario, BoxLayout.Y_AXIS));// modo vertical
+        //lo pongo en  modo vertical
+        Formulario.setLayout(new BoxLayout(Formulario, BoxLayout.Y_AXIS));
         Formulario.add(new JLabel("Identificacion:"));
         Formulario.add(identificacion);
         Formulario.add(new JLabel("Nombre:"));
